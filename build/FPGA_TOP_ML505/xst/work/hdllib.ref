@@ -1,0 +1,7 @@
+MO LogGraph NULL ../../src/LogGraph.v vlg28/_log_graph.bin 1367472484
+MO Register NULL ../../src/Register.v vlg09/_register.bin 1367472484
+MO ButtonParse NULL ../../src/ButtonParse.v vlg53/_button_parse.bin 1367472484
+MO EdgeDetect NULL ../../src/EdgeDetect.v vlg52/_edge_detect.bin 1367472484
+MO i2s_to_parallel NULL ../../src/i2s_to_parallel.v vlg60/i2s__to__parallel.bin 1367472484
+MO FPGA_TOP_ML505 NULL ../../src/FPGA_TOP_ML505.v vlg2A/_f_p_g_a___t_o_p___m_l505.bin 1367472484
+MO Debouncer NULL ../../src/Debouncer.v vlg63/_debouncer.bin 1367472484

@@ -1,0 +1,41 @@
+make impact -C build/FPGA_TOP_ML505 TOP=FPGA_TOP_ML505 SRC=../../src TEMPLATES=../../cfg
+make[1]: Entering directory `/home/cc/cs150/sp13/class/cs150-ad/i2s to parallel/build/FPGA_TOP_ML505'
+sed "s/##BITFILE##/FPGA_TOP_ML505.bit/" < ../../cfg/impact.batch > impact.batch
+impact -batch impact.batch
+Release 14.1 - iMPACT P.15xf (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Preference Table
+Name                 Setting             
+StartupClock         Auto_Correction     
+AutoSignature        False               
+KeepSVF              False               
+ConcurrentMode       False               
+UseHighz             False               
+ConfigOnFailure      Stop                
+UserLevel            Novice              
+MessageLevel         Detailed            
+svfUseTime           false               
+SpiByteSwap          Auto_Correction     
+AutoInfer            false               
+SvfPlayDisplayComments false               
+AutoDetecting cable. Please wait.
+If you are using the Platform Cable USB, please refer to the USB Cable
+Installation Guide (UG344) to install the libusb package.
+Connecting to cable (Usb Port - USB21).
+Checking cable driver.
+ Cannot access /dev/windrvr6 - Permission denied.
+Cable connection failed.
+Connecting to cable (Parallel Port - parport0).
+ Cannot access /dev/windrvr6 - Permission denied.
+Cable connection failed.
+Connecting to cable (Parallel Port - parport1).
+ Cannot access /dev/windrvr6 - Permission denied.
+Cable connection failed.
+Connecting to cable (Parallel Port - parport2).
+ Cannot access /dev/windrvr6 - Permission denied.
+Cable connection failed.
+Connecting to cable (Parallel Port - parport3).
+ Cannot access /dev/windrvr6 - Permission denied.
+Cable connection failed.
+Cable autodetection failed.
+make[1]: Leaving directory `/home/cc/cs150/sp13/class/cs150-ad/i2s to parallel/build/FPGA_TOP_ML505'

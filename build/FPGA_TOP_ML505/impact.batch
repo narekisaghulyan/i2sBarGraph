@@ -1,0 +1,6 @@
+setMode -bscan
+setCable -port auto
+identify
+assignFile -p 5 -file FPGA_TOP_ML505.bit
+program -p 5
+quit

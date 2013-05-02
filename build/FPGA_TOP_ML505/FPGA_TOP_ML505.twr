@@ -1,0 +1,1830 @@
+--------------------------------------------------------------------------------
+Release 14.1 Trace  (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.1/ISE_DS/ISE/bin/lin64/unwrapped/trce -v 3 -s 1 -n 10 -fastpaths
+-xml FPGA_TOP_ML505.twx FPGA_TOP_ML505.ncd -o FPGA_TOP_ML505.twr
+FPGA_TOP_ML505.pcf
+
+Design file:              FPGA_TOP_ML505.ncd
+Physical constraint file: FPGA_TOP_ML505.pcf
+Device,package,speed:     xc5vlx110t,ff1136,-1 (PRODUCTION 1.73 2012-04-23, STEPPING level 0)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_USER_CLK = PERIOD TIMEGRP "CLK_33MHZ_FPGA" 30.3 ns HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 5091 paths analyzed, 286 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   4.450ns.
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_17 (SLICE_X68Y113.CIN), 355 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     25.850ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_18 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_17 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.415ns (Levels of Logic = 7)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_18 to systemResetParse/BP[0].D/CntReg/Out_17
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y113.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_18
+    SLICE_X69Y112.B1     net (fanout=3)        0.849   systemResetParse/BP[0].D/CntReg/Out<18>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CLK    Tcinck                0.111   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_xor<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_17
+    -------------------------------------------------  ---------------------------
+    Total                                      4.415ns (1.581ns logic, 2.834ns route)
+                                                       (35.8% logic, 64.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.078ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_14 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_17 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.181ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.129 - 0.135)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_14 to systemResetParse/BP[0].D/CntReg/Out_17
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_14
+    SLICE_X69Y112.B2     net (fanout=4)        0.615   systemResetParse/BP[0].D/CntReg/Out<14>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CLK    Tcinck                0.111   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_xor<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_17
+    -------------------------------------------------  ---------------------------
+    Total                                      4.181ns (1.581ns logic, 2.600ns route)
+                                                       (37.8% logic, 62.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.084ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_12 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_17 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.175ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.129 - 0.135)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_12 to systemResetParse/BP[0].D/CntReg/Out_17
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.AQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_12
+    SLICE_X69Y112.B3     net (fanout=4)        0.609   systemResetParse/BP[0].D/CntReg/Out<12>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CLK    Tcinck                0.111   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_xor<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_17
+    -------------------------------------------------  ---------------------------
+    Total                                      4.175ns (1.581ns logic, 2.594ns route)
+                                                       (37.9% logic, 62.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_18 (SLICE_X68Y113.CIN), 355 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     25.866ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_18 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_18 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.399ns (Levels of Logic = 7)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_18 to systemResetParse/BP[0].D/CntReg/Out_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y113.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_18
+    SLICE_X69Y112.B1     net (fanout=3)        0.849   systemResetParse/BP[0].D/CntReg/Out<18>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CLK    Tcinck                0.095   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_xor<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_18
+    -------------------------------------------------  ---------------------------
+    Total                                      4.399ns (1.565ns logic, 2.834ns route)
+                                                       (35.6% logic, 64.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.094ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_14 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_18 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.165ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.129 - 0.135)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_14 to systemResetParse/BP[0].D/CntReg/Out_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_14
+    SLICE_X69Y112.B2     net (fanout=4)        0.615   systemResetParse/BP[0].D/CntReg/Out<14>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CLK    Tcinck                0.095   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_xor<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_18
+    -------------------------------------------------  ---------------------------
+    Total                                      4.165ns (1.565ns logic, 2.600ns route)
+                                                       (37.6% logic, 62.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.100ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_12 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_18 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.159ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.129 - 0.135)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_12 to systemResetParse/BP[0].D/CntReg/Out_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.AQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_12
+    SLICE_X69Y112.B3     net (fanout=4)        0.609   systemResetParse/BP[0].D/CntReg/Out<12>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CLK    Tcinck                0.095   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_xor<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_18
+    -------------------------------------------------  ---------------------------
+    Total                                      4.159ns (1.565ns logic, 2.594ns route)
+                                                       (37.6% logic, 62.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_15 (SLICE_X68Y112.CIN), 271 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     25.883ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_18 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_15 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.368ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.014ns (0.125 - 0.139)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_18 to systemResetParse/BP[0].D/CntReg/Out_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y113.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_18
+    SLICE_X69Y112.B1     net (fanout=3)        0.849   systemResetParse/BP[0].D/CntReg/Out<18>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CLK    Tcinck                0.168   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_15
+    -------------------------------------------------  ---------------------------
+    Total                                      4.368ns (1.534ns logic, 2.834ns route)
+                                                       (35.1% logic, 64.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.131ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_14 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_15 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.134ns (Levels of Logic = 6)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_14 to systemResetParse/BP[0].D/CntReg/Out_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_14
+    SLICE_X69Y112.B2     net (fanout=4)        0.615   systemResetParse/BP[0].D/CntReg/Out<14>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CLK    Tcinck                0.168   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_15
+    -------------------------------------------------  ---------------------------
+    Total                                      4.134ns (1.534ns logic, 2.600ns route)
+                                                       (37.1% logic, 62.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.137ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_12 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_15 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.128ns (Levels of Logic = 6)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_12 to systemResetParse/BP[0].D/CntReg/Out_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.AQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_12
+    SLICE_X69Y112.B3     net (fanout=4)        0.609   systemResetParse/BP[0].D/CntReg/Out<12>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CLK    Tcinck                0.168   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_15
+    -------------------------------------------------  ---------------------------
+    Total                                      4.128ns (1.534ns logic, 2.594ns route)
+                                                       (37.2% logic, 62.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_16 (SLICE_X68Y113.CIN), 355 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     25.922ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_18 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_16 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.343ns (Levels of Logic = 7)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_18 to systemResetParse/BP[0].D/CntReg/Out_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y113.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_18
+    SLICE_X69Y112.B1     net (fanout=3)        0.849   systemResetParse/BP[0].D/CntReg/Out<18>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CLK    Tcinck                0.039   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_xor<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_16
+    -------------------------------------------------  ---------------------------
+    Total                                      4.343ns (1.509ns logic, 2.834ns route)
+                                                       (34.7% logic, 65.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.150ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_14 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_16 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.109ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.129 - 0.135)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_14 to systemResetParse/BP[0].D/CntReg/Out_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_14
+    SLICE_X69Y112.B2     net (fanout=4)        0.615   systemResetParse/BP[0].D/CntReg/Out<14>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CLK    Tcinck                0.039   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_xor<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_16
+    -------------------------------------------------  ---------------------------
+    Total                                      4.109ns (1.509ns logic, 2.600ns route)
+                                                       (36.7% logic, 63.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.156ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_12 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_16 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.103ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.129 - 0.135)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_12 to systemResetParse/BP[0].D/CntReg/Out_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.AQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_12
+    SLICE_X69Y112.B3     net (fanout=4)        0.609   systemResetParse/BP[0].D/CntReg/Out<12>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+    SLICE_X68Y113.CLK    Tcinck                0.039   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_xor<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_16
+    -------------------------------------------------  ---------------------------
+    Total                                      4.103ns (1.509ns logic, 2.594ns route)
+                                                       (36.8% logic, 63.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_13 (SLICE_X68Y112.CIN), 271 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     25.940ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_18 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_13 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.311ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.014ns (0.125 - 0.139)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_18 to systemResetParse/BP[0].D/CntReg/Out_13
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y113.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_18
+    SLICE_X69Y112.B1     net (fanout=3)        0.849   systemResetParse/BP[0].D/CntReg/Out<18>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CLK    Tcinck                0.111   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_13
+    -------------------------------------------------  ---------------------------
+    Total                                      4.311ns (1.477ns logic, 2.834ns route)
+                                                       (34.3% logic, 65.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.188ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_14 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_13 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.077ns (Levels of Logic = 6)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_14 to systemResetParse/BP[0].D/CntReg/Out_13
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_14
+    SLICE_X69Y112.B2     net (fanout=4)        0.615   systemResetParse/BP[0].D/CntReg/Out<14>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CLK    Tcinck                0.111   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_13
+    -------------------------------------------------  ---------------------------
+    Total                                      4.077ns (1.477ns logic, 2.600ns route)
+                                                       (36.2% logic, 63.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.194ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_12 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_13 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.071ns (Levels of Logic = 6)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_12 to systemResetParse/BP[0].D/CntReg/Out_13
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.AQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_12
+    SLICE_X69Y112.B3     net (fanout=4)        0.609   systemResetParse/BP[0].D/CntReg/Out<12>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CLK    Tcinck                0.111   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_13
+    -------------------------------------------------  ---------------------------
+    Total                                      4.071ns (1.477ns logic, 2.594ns route)
+                                                       (36.3% logic, 63.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_14 (SLICE_X68Y112.CIN), 271 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     25.956ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_18 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_14 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.295ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.014ns (0.125 - 0.139)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_18 to systemResetParse/BP[0].D/CntReg/Out_14
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y113.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_18
+    SLICE_X69Y112.B1     net (fanout=3)        0.849   systemResetParse/BP[0].D/CntReg/Out<18>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CLK    Tcinck                0.095   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_14
+    -------------------------------------------------  ---------------------------
+    Total                                      4.295ns (1.461ns logic, 2.834ns route)
+                                                       (34.0% logic, 66.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.204ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_14 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_14 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.061ns (Levels of Logic = 6)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_14 to systemResetParse/BP[0].D/CntReg/Out_14
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_14
+    SLICE_X69Y112.B2     net (fanout=4)        0.615   systemResetParse/BP[0].D/CntReg/Out<14>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CLK    Tcinck                0.095   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_14
+    -------------------------------------------------  ---------------------------
+    Total                                      4.061ns (1.461ns logic, 2.600ns route)
+                                                       (36.0% logic, 64.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.210ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_12 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_14 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.055ns (Levels of Logic = 6)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_12 to systemResetParse/BP[0].D/CntReg/Out_14
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.AQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_12
+    SLICE_X69Y112.B3     net (fanout=4)        0.609   systemResetParse/BP[0].D/CntReg/Out<12>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CLK    Tcinck                0.095   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_14
+    -------------------------------------------------  ---------------------------
+    Total                                      4.055ns (1.461ns logic, 2.594ns route)
+                                                       (36.0% logic, 64.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_11 (SLICE_X68Y111.CIN), 187 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     25.982ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_18 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_11 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.264ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.019ns (0.120 - 0.139)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_18 to systemResetParse/BP[0].D/CntReg/Out_11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y113.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_18
+    SLICE_X69Y112.B1     net (fanout=3)        0.849   systemResetParse/BP[0].D/CntReg/Out<18>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CLK    Tcinck                0.168   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+                                                       systemResetParse/BP[0].D/CntReg/Out_11
+    -------------------------------------------------  ---------------------------
+    Total                                      4.264ns (1.430ns logic, 2.834ns route)
+                                                       (33.5% logic, 66.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.220ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_14 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_11 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.030ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.015ns (0.120 - 0.135)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_14 to systemResetParse/BP[0].D/CntReg/Out_11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_14
+    SLICE_X69Y112.B2     net (fanout=4)        0.615   systemResetParse/BP[0].D/CntReg/Out<14>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CLK    Tcinck                0.168   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+                                                       systemResetParse/BP[0].D/CntReg/Out_11
+    -------------------------------------------------  ---------------------------
+    Total                                      4.030ns (1.430ns logic, 2.600ns route)
+                                                       (35.5% logic, 64.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.226ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_12 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_11 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.024ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.015ns (0.120 - 0.135)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_12 to systemResetParse/BP[0].D/CntReg/Out_11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.AQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_12
+    SLICE_X69Y112.B3     net (fanout=4)        0.609   systemResetParse/BP[0].D/CntReg/Out<12>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CLK    Tcinck                0.168   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+                                                       systemResetParse/BP[0].D/CntReg/Out_11
+    -------------------------------------------------  ---------------------------
+    Total                                      4.024ns (1.430ns logic, 2.594ns route)
+                                                       (35.5% logic, 64.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_12 (SLICE_X68Y112.CIN), 271 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     26.012ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_18 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_12 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.239ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.014ns (0.125 - 0.139)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_18 to systemResetParse/BP[0].D/CntReg/Out_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y113.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_18
+    SLICE_X69Y112.B1     net (fanout=3)        0.849   systemResetParse/BP[0].D/CntReg/Out<18>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CLK    Tcinck                0.039   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_12
+    -------------------------------------------------  ---------------------------
+    Total                                      4.239ns (1.405ns logic, 2.834ns route)
+                                                       (33.1% logic, 66.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.260ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_14 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_12 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.005ns (Levels of Logic = 6)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_14 to systemResetParse/BP[0].D/CntReg/Out_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_14
+    SLICE_X69Y112.B2     net (fanout=4)        0.615   systemResetParse/BP[0].D/CntReg/Out<14>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CLK    Tcinck                0.039   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_12
+    -------------------------------------------------  ---------------------------
+    Total                                      4.005ns (1.405ns logic, 2.600ns route)
+                                                       (35.1% logic, 64.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.266ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_12 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_12 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      3.999ns (Levels of Logic = 6)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_12 to systemResetParse/BP[0].D/CntReg/Out_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.AQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_12
+    SLICE_X69Y112.B3     net (fanout=4)        0.609   systemResetParse/BP[0].D/CntReg/Out<12>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+    SLICE_X68Y112.CLK    Tcinck                0.039   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_12
+    -------------------------------------------------  ---------------------------
+    Total                                      3.999ns (1.405ns logic, 2.594ns route)
+                                                       (35.1% logic, 64.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_9 (SLICE_X68Y111.CIN), 187 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     26.039ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_18 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_9 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.207ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.019ns (0.120 - 0.139)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_18 to systemResetParse/BP[0].D/CntReg/Out_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y113.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_18
+    SLICE_X69Y112.B1     net (fanout=3)        0.849   systemResetParse/BP[0].D/CntReg/Out<18>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CLK    Tcinck                0.111   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+                                                       systemResetParse/BP[0].D/CntReg/Out_9
+    -------------------------------------------------  ---------------------------
+    Total                                      4.207ns (1.373ns logic, 2.834ns route)
+                                                       (32.6% logic, 67.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.277ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_14 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_9 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      3.973ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.015ns (0.120 - 0.135)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_14 to systemResetParse/BP[0].D/CntReg/Out_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_14
+    SLICE_X69Y112.B2     net (fanout=4)        0.615   systemResetParse/BP[0].D/CntReg/Out<14>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CLK    Tcinck                0.111   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+                                                       systemResetParse/BP[0].D/CntReg/Out_9
+    -------------------------------------------------  ---------------------------
+    Total                                      3.973ns (1.373ns logic, 2.600ns route)
+                                                       (34.6% logic, 65.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.283ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_12 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_9 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      3.967ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.015ns (0.120 - 0.135)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_12 to systemResetParse/BP[0].D/CntReg/Out_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.AQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_12
+    SLICE_X69Y112.B3     net (fanout=4)        0.609   systemResetParse/BP[0].D/CntReg/Out<12>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CLK    Tcinck                0.111   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+                                                       systemResetParse/BP[0].D/CntReg/Out_9
+    -------------------------------------------------  ---------------------------
+    Total                                      3.967ns (1.373ns logic, 2.594ns route)
+                                                       (34.6% logic, 65.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_10 (SLICE_X68Y111.CIN), 187 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     26.055ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_18 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_10 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      4.191ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.019ns (0.120 - 0.139)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_18 to systemResetParse/BP[0].D/CntReg/Out_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y113.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_18
+    SLICE_X69Y112.B1     net (fanout=3)        0.849   systemResetParse/BP[0].D/CntReg/Out<18>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CLK    Tcinck                0.095   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+                                                       systemResetParse/BP[0].D/CntReg/Out_10
+    -------------------------------------------------  ---------------------------
+    Total                                      4.191ns (1.357ns logic, 2.834ns route)
+                                                       (32.4% logic, 67.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.293ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_14 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_10 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      3.957ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.015ns (0.120 - 0.135)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_14 to systemResetParse/BP[0].D/CntReg/Out_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.CQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_14
+    SLICE_X69Y112.B2     net (fanout=4)        0.615   systemResetParse/BP[0].D/CntReg/Out<14>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CLK    Tcinck                0.095   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+                                                       systemResetParse/BP[0].D/CntReg/Out_10
+    -------------------------------------------------  ---------------------------
+    Total                                      3.957ns (1.357ns logic, 2.600ns route)
+                                                       (34.3% logic, 65.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     26.299ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_12 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_10 (FF)
+  Requirement:          30.300ns
+  Data Path Delay:      3.951ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.015ns (0.120 - 0.135)
+  Source Clock:         Clock rising at 0.000ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: systemResetParse/BP[0].D/CntReg/Out_12 to systemResetParse/BP[0].D/CntReg/Out_10
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.AQ     Tcko                  0.471   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_12
+    SLICE_X69Y112.B3     net (fanout=4)        0.609   systemResetParse/BP[0].D/CntReg/Out<12>
+    SLICE_X69Y112.B      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_or00008
+                                                       systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C1     net (fanout=21)       1.095   systemResetParse/BP[0].D/NextCount_and00008
+    SLICE_X69Y110.C      Tilo                  0.094   systemResetParse/BP[0].D/NextCount_and000025
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.A1     net (fanout=1)        0.880   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>
+    SLICE_X68Y109.COUT   Topcya                0.499   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_lut<0>_rt
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.CIN    net (fanout=1)        0.010   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+    SLICE_X68Y110.COUT   Tbyp                  0.104   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CIN    net (fanout=1)        0.000   systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+    SLICE_X68Y111.CLK    Tcinck                0.095   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+                                                       systemResetParse/BP[0].D/CntReg/Out_10
+    -------------------------------------------------  ---------------------------
+    Total                                      3.951ns (1.357ns logic, 2.594ns route)
+                                                       (34.3% logic, 65.7% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_USER_CLK = PERIOD TIMEGRP "CLK_33MHZ_FPGA" 30.3 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].ED.ED/Register/Out_1 (SLICE_X32Y84.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.486ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               systemResetParse/BP[0].ED.ED/Register/Out_0 (FF)
+  Destination:          systemResetParse/BP[0].ED.ED/Register/Out_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.486ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 30.300ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: systemResetParse/BP[0].ED.ED/Register/Out_0 to systemResetParse/BP[0].ED.ED/Register/Out_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y84.AQ      Tcko                  0.433   systemResetParse/BP[0].ED.ED/Register/Out<2>
+                                                       systemResetParse/BP[0].ED.ED/Register/Out_0
+    SLICE_X32Y84.BX      net (fanout=3)        0.295   systemResetParse/BP[0].ED.ED/Register/Out<0>
+    SLICE_X32Y84.CLK     Tckdi       (-Th)     0.242   systemResetParse/BP[0].ED.ED/Register/Out<2>
+                                                       systemResetParse/BP[0].ED.ED/Register/Out_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.486ns (0.191ns logic, 0.295ns route)
+                                                       (39.3% logic, 60.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_3 (SLICE_X68Y109.CX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.544ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_2 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_3 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.544ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 30.300ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: systemResetParse/BP[0].D/CntReg/Out_2 to systemResetParse/BP[0].D/CntReg/Out_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y109.CQ     Tcko                  0.433   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/CntReg/Out_2
+    SLICE_X68Y109.CX     net (fanout=4)        0.165   systemResetParse/BP[0].D/CntReg/Out<2>
+    SLICE_X68Y109.CLK    Tckdi       (-Th)     0.054   systemResetParse/BP[0].D/CntReg/Out<3>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<3>
+                                                       systemResetParse/BP[0].D/CntReg/Out_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.544ns (0.379ns logic, 0.165ns route)
+                                                       (69.7% logic, 30.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_13 (SLICE_X68Y112.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.546ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_12 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_13 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.546ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 30.300ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: systemResetParse/BP[0].D/CntReg/Out_12 to systemResetParse/BP[0].D/CntReg/Out_13
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.AQ     Tcko                  0.433   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_12
+    SLICE_X68Y112.AX     net (fanout=4)        0.156   systemResetParse/BP[0].D/CntReg/Out<12>
+    SLICE_X68Y112.CLK    Tckdi       (-Th)     0.043   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_13
+    -------------------------------------------------  ---------------------------
+    Total                                      0.546ns (0.390ns logic, 0.156ns route)
+                                                       (71.4% logic, 28.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_11 (SLICE_X68Y111.CX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.552ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_10 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_11 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.552ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 30.300ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: systemResetParse/BP[0].D/CntReg/Out_10 to systemResetParse/BP[0].D/CntReg/Out_11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y111.CQ     Tcko                  0.433   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/CntReg/Out_10
+    SLICE_X68Y111.CX     net (fanout=5)        0.173   systemResetParse/BP[0].D/CntReg/Out<10>
+    SLICE_X68Y111.CLK    Tckdi       (-Th)     0.054   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+                                                       systemResetParse/BP[0].D/CntReg/Out_11
+    -------------------------------------------------  ---------------------------
+    Total                                      0.552ns (0.379ns logic, 0.173ns route)
+                                                       (68.7% logic, 31.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_15 (SLICE_X68Y112.CX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.552ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_14 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_15 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.552ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 30.300ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: systemResetParse/BP[0].D/CntReg/Out_14 to systemResetParse/BP[0].D/CntReg/Out_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y112.CQ     Tcko                  0.433   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_14
+    SLICE_X68Y112.CX     net (fanout=4)        0.173   systemResetParse/BP[0].D/CntReg/Out<14>
+    SLICE_X68Y112.CLK    Tckdi       (-Th)     0.054   systemResetParse/BP[0].D/CntReg/Out<15>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<15>
+                                                       systemResetParse/BP[0].D/CntReg/Out_15
+    -------------------------------------------------  ---------------------------
+    Total                                      0.552ns (0.379ns logic, 0.173ns route)
+                                                       (68.7% logic, 31.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_7 (SLICE_X68Y110.CX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.554ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_6 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_7 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.554ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 30.300ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: systemResetParse/BP[0].D/CntReg/Out_6 to systemResetParse/BP[0].D/CntReg/Out_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y110.CQ     Tcko                  0.433   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/CntReg/Out_6
+    SLICE_X68Y110.CX     net (fanout=4)        0.175   systemResetParse/BP[0].D/CntReg/Out<6>
+    SLICE_X68Y110.CLK    Tckdi       (-Th)     0.054   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+                                                       systemResetParse/BP[0].D/CntReg/Out_7
+    -------------------------------------------------  ---------------------------
+    Total                                      0.554ns (0.379ns logic, 0.175ns route)
+                                                       (68.4% logic, 31.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_9 (SLICE_X68Y111.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.556ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_8 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_9 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.556ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 30.300ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: systemResetParse/BP[0].D/CntReg/Out_8 to systemResetParse/BP[0].D/CntReg/Out_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y111.AQ     Tcko                  0.433   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/CntReg/Out_8
+    SLICE_X68Y111.AX     net (fanout=4)        0.166   systemResetParse/BP[0].D/CntReg/Out<8>
+    SLICE_X68Y111.CLK    Tckdi       (-Th)     0.043   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<11>
+                                                       systemResetParse/BP[0].D/CntReg/Out_9
+    -------------------------------------------------  ---------------------------
+    Total                                      0.556ns (0.390ns logic, 0.166ns route)
+                                                       (70.1% logic, 29.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_5 (SLICE_X68Y110.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.563ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_4 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_5 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.563ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 30.300ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: systemResetParse/BP[0].D/CntReg/Out_4 to systemResetParse/BP[0].D/CntReg/Out_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y110.AQ     Tcko                  0.433   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/CntReg/Out_4
+    SLICE_X68Y110.AX     net (fanout=4)        0.173   systemResetParse/BP[0].D/CntReg/Out<4>
+    SLICE_X68Y110.CLK    Tckdi       (-Th)     0.043   systemResetParse/BP[0].D/CntReg/Out<7>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_cy<7>
+                                                       systemResetParse/BP[0].D/CntReg/Out_5
+    -------------------------------------------------  ---------------------------
+    Total                                      0.563ns (0.390ns logic, 0.173ns route)
+                                                       (69.3% logic, 30.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/CntReg/Out_17 (SLICE_X68Y113.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.563ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_16 (FF)
+  Destination:          systemResetParse/BP[0].D/CntReg/Out_17 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.563ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clock rising at 30.300ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: systemResetParse/BP[0].D/CntReg/Out_16 to systemResetParse/BP[0].D/CntReg/Out_17
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y113.AQ     Tcko                  0.433   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_16
+    SLICE_X68Y113.AX     net (fanout=8)        0.173   systemResetParse/BP[0].D/CntReg/Out<16>
+    SLICE_X68Y113.CLK    Tckdi       (-Th)     0.043   systemResetParse/BP[0].D/CntReg/Out<18>
+                                                       systemResetParse/BP[0].D/Maddsub_NextCount_share0000_xor<18>
+                                                       systemResetParse/BP[0].D/CntReg/Out_17
+    -------------------------------------------------  ---------------------------
+    Total                                      0.563ns (0.390ns logic, 0.173ns route)
+                                                       (69.3% logic, 30.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point systemResetParse/BP[0].D/OutReg/Out_0 (SLICE_X69Y109.A5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.609ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               systemResetParse/BP[0].D/CntReg/Out_11 (FF)
+  Destination:          systemResetParse/BP[0].D/OutReg/Out_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.612ns (Levels of Logic = 1)
+  Clock Path Skew:      0.003ns (0.123 - 0.120)
+  Source Clock:         Clock rising at 30.300ns
+  Destination Clock:    Clock rising at 30.300ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: systemResetParse/BP[0].D/CntReg/Out_11 to systemResetParse/BP[0].D/OutReg/Out_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X68Y111.DQ     Tcko                  0.433   systemResetParse/BP[0].D/CntReg/Out<11>
+                                                       systemResetParse/BP[0].D/CntReg/Out_11
+    SLICE_X69Y109.A5     net (fanout=5)        0.376   systemResetParse/BP[0].D/CntReg/Out<11>
+    SLICE_X69Y109.CLK    Tah         (-Th)     0.197   systemResetParse/BP[0].D/OutReg/Out<0>
+                                                       systemResetParse/BP[0].D/NextOut11
+                                                       systemResetParse/BP[0].D/OutReg/Out_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.612ns (0.236ns logic, 0.376ns route)
+                                                       (38.6% logic, 61.4% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_USER_CLK = PERIOD TIMEGRP "CLK_33MHZ_FPGA" 30.3 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 28.634ns (period - min period limit)
+  Period: 30.300ns
+  Min period limit: 1.666ns (600.240MHz) (Tbgper_I)
+  Physical resource: clock_buf/I0
+  Logical resource: clock_buf/I0
+  Location pin: BUFGCTRL_X0Y10.I0
+  Clock network: CLK_33MHZ_FPGA_IBUFG
+--------------------------------------------------------------------------------
+Slack: 29.482ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 30.300ns
+  Low pulse: 15.150ns
+  Low pulse limit: 0.409ns (Tcl)
+  Physical resource: systemResetParse/BP[0].D/CntReg/Out<3>/CLK
+  Logical resource: systemResetParse/BP[0].D/CntReg/Out_0/CK
+  Location pin: SLICE_X68Y109.CLK
+  Clock network: Clock
+--------------------------------------------------------------------------------
+Slack: 29.482ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 30.300ns
+  High pulse: 15.150ns
+  High pulse limit: 0.409ns (Tch)
+  Physical resource: systemResetParse/BP[0].D/CntReg/Out<3>/CLK
+  Logical resource: systemResetParse/BP[0].D/CntReg/Out_0/CK
+  Location pin: SLICE_X68Y109.CLK
+  Clock network: Clock
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock CLK_33MHZ_FPGA
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK_33MHZ_FPGA |    4.450|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 5091 paths, 0 nets, and 195 connections
+
+Design statistics:
+   Minimum period:   4.450ns{1}   (Maximum frequency: 224.719MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Wed May  1 22:31:38 2013 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 604 MB
+
+
+

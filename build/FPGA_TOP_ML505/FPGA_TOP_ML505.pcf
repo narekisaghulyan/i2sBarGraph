@@ -1,0 +1,55 @@
+//! **************************************************************************
+// Written by: Map P.15xf on Wed May 01 22:29:34 2013
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "FPGA_CPU_RESET_B" LOCATE = SITE "E9" LEVEL 1;
+COMP "GPIO_LED<0>" LOCATE = SITE "H18" LEVEL 1;
+COMP "GPIO_LED<1>" LOCATE = SITE "L18" LEVEL 1;
+COMP "GPIO_LED<2>" LOCATE = SITE "G15" LEVEL 1;
+COMP "SCLK_OUT" LOCATE = SITE "H34" LEVEL 1;
+COMP "GPIO_LED<3>" LOCATE = SITE "AD26" LEVEL 1;
+COMP "GPIO_LED<4>" LOCATE = SITE "G16" LEVEL 1;
+COMP "GPIO_LED<5>" LOCATE = SITE "AD25" LEVEL 1;
+COMP "GPIO_LED<6>" LOCATE = SITE "AD24" LEVEL 1;
+COMP "GPIO_LED<7>" LOCATE = SITE "AE24" LEVEL 1;
+COMP "GPIO_COMPLED<0>" LOCATE = SITE "E8" LEVEL 1;
+COMP "GPIO_COMPLED<1>" LOCATE = SITE "AG23" LEVEL 1;
+COMP "GPIO_COMPLED<2>" LOCATE = SITE "AF13" LEVEL 1;
+COMP "GPIO_COMPLED<3>" LOCATE = SITE "AG12" LEVEL 1;
+COMP "GPIO_COMPLED<4>" LOCATE = SITE "AF23" LEVEL 1;
+COMP "AUDIO_BIT_CLK" LOCATE = SITE "AF18" LEVEL 1;
+COMP "LRCLK_IN" LOCATE = SITE "F34" LEVEL 1;
+COMP "CLK_33MHZ_FPGA" LOCATE = SITE "AH17" LEVEL 1;
+COMP "STEREO_AUDIO_IN1" LOCATE = SITE "G32" LEVEL 1;
+COMP "STEREO_AUDIO_IN2" LOCATE = SITE "H32" LEVEL 1;
+COMP "SCLK_IN" LOCATE = SITE "G33" LEVEL 1;
+PIN SCLK_IN_pin<0> = BEL "SCLK_IN" PINNAME PAD;
+PIN "SCLK_IN_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+COMP "LRCLK_OUT" LOCATE = SITE "H33" LEVEL 1;
+TIMEGRP CLK_33MHZ_FPGA = BEL "systemResetParse/BP[0].ED.ED/Register/Out_2" BEL
+        "systemResetParse/BP[0].ED.ED/Register/Out_1" BEL
+        "systemResetParse/BP[0].ED.ED/Register/Out_0" BEL "clock_buf" BEL
+        "systemResetParse/BP[0].D/OutReg/Out_0" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_0" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_1" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_2" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_3" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_4" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_5" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_6" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_7" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_8" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_9" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_10" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_11" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_12" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_13" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_14" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_15" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_16" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_17" BEL
+        "systemResetParse/BP[0].D/CntReg/Out_18";
+TS_USER_CLK = PERIOD TIMEGRP "CLK_33MHZ_FPGA" 30.3 ns HIGH 50%;
+SCHEMATIC END;
+

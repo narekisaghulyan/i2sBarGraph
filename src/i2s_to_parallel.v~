@@ -1,0 +1,71 @@
+module i2s_to_parallel(
+	LR_CK,
+	BIT_CK,
+	DIN,
+	RESET,
+	DATA_L,
+	DATA_R,
+	STROBE,
+	STROBE_LR
+);
+parameter width = 16;
+
+input 			LR_CK;
+input 			BIT_CK;
+input 			DIN;
+input 			RESET;
+output reg [width-1:0] 	DATA_L;
+output reg [width-1:0] 	DATA_R;
+output reg 		STROBE;
+output reg 		STROBE_LR;
+
+reg 		current_lr;
+reg [width-1:0]	counter;
+reg [width-1:0] shift_reg;
+reg		output_strobed;
+
+	always @(*) begin
+
+	end
+	
+	always @(posedge BIT_CK) begin
+		if (RESET) begin
+			DATA_L <= 0;
+			DATA_R <= 0;
+			shift_reg <= 0;
+			current_lr <= 0;
+			STROBE <= 0;
+			STROBE_LR <= 0;
+			counter <= width;
+			output_strobed <= 0;
+		end
+		else begin
+			if (LR_CK != current_lr) begin
+				current_lr <= LR_CK;
+				counter <= width;
+				shift_reg <= 0;
+				STROBE <= 0;
+				output_strobed <= 0;
+			end
+			else if (counter > 0) begin
+				shift_reg <= {shift_reg[width-2:0], DIN};
+				counter <= counter-1;
+			end
+			else if (counter == 0) begin
+				if (!output_strobed) begin
+					if (current_lr) begin
+						DATA_R <= shift_reg;
+					end
+					else begin
+						DATA_L <= shift_reg;
+					end
+					STROBE_LR <= current_lr;
+					output_strobed <= 1;
+				end
+				else begin
+					STROBE <= 1;
+				end
+			end
+		end
+	end
+endmodule

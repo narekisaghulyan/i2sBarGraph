@@ -1,0 +1,8 @@
+verilog work "../../src/ButtonParse.v"
+verilog work "../../src/Const.v"
+verilog work "../../src/Debouncer.v"
+verilog work "../../src/EdgeDetect.v"
+verilog work "../../src/FPGA_TOP_ML505.v"
+verilog work "../../src/i2s_to_parallel.v"
+verilog work "../../src/LogGraph.v"
+verilog work "../../src/Register.v"
