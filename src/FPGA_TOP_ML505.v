@@ -29,11 +29,21 @@ module FPGA_TOP_ML505(
 	wire						Clock;
 	BUFG        clock_buf(	   .I(CLK_33MHZ_FPGA),	.O(Clock));
 
-	reg     [7:0]					AudioClkDiv;
-
 	wire						SystemReset;
 	wire	[2:0]					State;
 
+
+	/*
+         * /-L-\  R
+	 *    M1 M2
+         *
+	 * M0    M3
+	 *
+	*/
+	parameter MicSel  = 0;
+	parameter LineSel = MicSel[0] ^ MicSel[1];// 0 = L1, 1 = L2
+	parameter ChSel   = MicSel[1]; 		  // 0 = L, 1 = R
+	reg     [7:0]					AudioClkDiv;
 	wire	[23:0]					DataL, DataR;
 	wire						Strobe, StrobeLR;
 
@@ -58,7 +68,7 @@ module FPGA_TOP_ML505(
 		i2s(
 		.LR_CK(		LRCLK_IN), 
 		.BIT_CK(	SCLK_IN), 
-		.DIN(		STEREO_AUDIO_IN1), 
+		.DIN(		LineSel ? STEREO_AUDIO_IN2 : STEREO_AUDIO_IN1), 
 		.RESET(		SystemReset),
 		.DATA_L(	DataL),
 		.DATA_R(	DataR),
@@ -79,19 +89,32 @@ module FPGA_TOP_ML505(
 	end
 
 	always @(posedge Strobe) begin
-		Volume <= {
-			DataR[23],
-			DataR[22],
-			DataR[20],
-			DataR[18],
-			DataR[16],
-			DataR[14],
-			DataR[12],
-			DataR[10],
-			DataR[ 8]};
+		if (ChSel) begin
+			Volume <= {
+				DataR[23],
+				DataR[22],
+				DataR[20],
+				DataR[18],
+				DataR[16],
+				DataR[14],
+				DataR[12],
+				DataR[10],
+				DataR[ 8]};
+		end
+		else begin
+			Volume <= {
+				DataL[23],
+				DataL[22],
+				DataL[20],
+				DataL[18],
+				DataL[16],
+				DataL[14],
+				DataL[12],
+				DataL[10],
+				DataL[ 8]};
+		end
 	end
 
 	assign AbsVolume = Volume[8] ? -Volume[7:0] : Volume[7:0];
 	assign	GPIO_COMPLED	= -1;
 endmodule
-
